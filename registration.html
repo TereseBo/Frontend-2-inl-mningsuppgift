@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/scripts/script.js"></script>
+    <title>Weave Registration</title>
+</head>
+<body>
+
+    <form id="projectregistration" action="#">
+        <label for="projectname">Project name</label>
+        <input type="text" name="projectname" id="projectname">
+        <br>
+        <label for="date">Off the loom</label>
+        <input type="date" name="date" id="date">
+        <br>
+        <label for="description">Short description</label>
+        <input type="text" name="description" id="description">
+        <br>
+        <label for="category">Type of item</label>
+        <input type="category" name="category" id="category">
+        <br>
+        <label for="warp">Warp fibers</label>
+        <input type="text" name="warp" id="warp">
+        <br>
+        <label for="weft">Weft fibers</label>
+        <input type="text" name="weft" id="weft">
+        <br>
+        <label for="details">Details (fringes, ladders, etc.)</label>
+        <input type="text" name="details" id="details">
+        <br>
+        <label for="img1">Picture 1</label>
+        <input type="file" name="img1" id="img1">
+        <br>
+        <label for="img2">Picture 2</label>
+        <input type="file" name="img2" id="img2">
+        <br>
+        <label for="img3">Picture 3</label>
+        <input type="file" name="img4" id="img4">
+        <br>
+        <label for="img4">Picture 4</label>
+        <input type="file" name="img4" id="img4">
+        <br>
+        
+        <br>
+        <input type="submit" value="Submit">
+
+    </form>
+    
+</body>
+
+<script type="text/javascript">
+
+$("#projectregistration").submit(function(event){
+        event.preventDefault();
+        projectRegistration();
+});
+	</script>
+</html>
