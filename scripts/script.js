@@ -184,7 +184,7 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
         $(`#cardspace`).append(`<div class='card' id='card${n}'></div>`);//Create a new card
         let showPic = item["filenames"][0]
         let altText = `Picture of the ${item["category"]} named ${item["projectname"]}`
-        $(`#card${n}`).append(`<div class='card-img-container'><img class='card${n}-img' src="../../images/${showPic}" alt="${altText}" ></img></div>`);//Create an image for the card and add it to the card
+        $(`#card${n}`).append(`<div class='card-img-container'><img id='card${n}-img' src="../../images/${showPic}" alt="${altText}" ></img></div>`);//Create an image for the card and add it to the card
 
 
        
