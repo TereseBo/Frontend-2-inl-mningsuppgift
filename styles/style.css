@@ -29,22 +29,24 @@ aside {
   grid-column: 1/2;
   grid-row: 1/4;
 }
+aside nav {
+  height: 90%;
+}
 aside ul {
+  box-sizing: border-box;
   padding: 0;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  margin-left: 1rem;
 }
 aside li {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 aside li:last-child {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  line-break: auto;
+  margin-top: auto;
 }
 aside li a {
   text-decoration: none;
@@ -52,7 +54,7 @@ aside li a {
   font-size: 1rem;
   font-weight: 600;
   display: block;
-  padding: 10px;
+  padding: 1rem;
   border-bottom: 1px solid black;
 }
 aside li a:hover {
@@ -90,6 +92,40 @@ main {
   height: 100%;
   object-fit: cover;
   border: 4px, dotted #350f94;
+}
+
+#cardspace .photocard {
+  width: 20%;
+  height: auto;
+  margin: 1%;
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#cardspace .photocard .photocard-img-container {
+  height: 100%;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+#cardspace .photocard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#detailspage-image-box {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+}
+#detailspage-image-box #detailspage-image-container {
+  width: 100%;
+  height: 50%;
+}
+#detailspage-image-box #detailspage-image-container img {
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

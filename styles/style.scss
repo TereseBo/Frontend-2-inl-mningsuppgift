@@ -1,19 +1,22 @@
-body{
+body {
     display: grid;
     grid-template-columns: repeat(8, 12vw);
     grid-template-rows: repeat(3, 33vh);
     gap: 1rem;
 }
-div{
+
+div {
     padding: 0%;
 }
-header{
+
+header {
     grid-column: 2/9;
     grid-row: 1/2;
     margin: auto;
     width: 87.5vw;
     height: 33.3vh;
-    & #header-img-container{
+
+    & #header-img-container {
         width: 100%;
         height: 100px;
         background-image: url(../images/header.jpg);
@@ -23,84 +26,77 @@ header{
     }
 
 
-    
-    
+
+
 }
 
-aside{
-    
+aside {
     grid-column: 1/2;
     grid-row: 1/4;
-
     
-    
+    & nav {
+        height: 90%;
+    }
 
-    & ul{
+    & ul {
+        box-sizing: border-box;
         padding: 0;
         display: flex;
         flex-direction: column;
-        
+        height: 100%;
+        margin-left:1rem;
     }
 
-    & li{
+    & li {
         list-style: none;
         margin: 0;
         padding: 0;
-        display: flex;
-
-
-        &:last-child{
-            position:absolute;
-            bottom: 0;
-            width: 100%;
-            line-break: auto;
-            
+        &:last-child {
+            margin-top: auto;
         }
 
-        & a{
+        & a {
             text-decoration: none;
             color: black;
             font-size: 1rem;
             font-weight: 600;
             display: block;
-            padding: 10px;
+            padding: 1rem;
             border-bottom: 1px solid black;
-            &:hover{
+
+            &:hover {
                 background-color: #f1f1f1;
             }
-            &.active{
+
+            &.active {
                 background-color: #77a0d6;
             }
-
-            
-
         }
     }
-
 }
 
-main{
+main {
     grid-column: 2/9;
     grid-row: 2/4;
 }
 
-#cardspace{
+#cardspace {
     display: flex;
     flex-wrap: wrap;
-    
-   
 
-    & .card{
+
+
+    & .card {
         width: 30%;
         height: auto;
         margin: 1%;
         background-color: #f1f1f1;
         border: 1px solid black;
         border-radius: 5px;
-        
 
-        & .card-img-container{
-            
+
+        & .card-img-container {
+
             height: 25%;
             background-color: #f1f1f1;
             padding-top: 10%;
@@ -108,13 +104,60 @@ main{
 
         }
 
-        & img{
+        & img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            
+
             border: 4px, dotted #350f94;
-            
+
+        }
+    }
+}
+
+
+#cardspace {
+    & .photocard{
+        width: 20%;
+        height: auto;
+        margin: 1%;
+        background-color: #f1f1f1;
+        border: 1px solid black;
+        border-radius: 5px;
+
+
+        & .photocard-img-container {
+
+            height: 100%;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+#detailspage-image-box{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+
+    
+
+    & #detailspage-image-container {
+        
+        width: 100%;
+        height: 50%;
+        
+
+        & img {
+            max-width: 500px;
+            width: 100%;
+            height: 100%;
         }
     }
 }

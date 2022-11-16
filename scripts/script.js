@@ -152,26 +152,12 @@ const contents = [
         ]
     }
 ]
-
-function createGalleryItem(item) {//TODO: Add all steps to create a gallery item
-}
-
 $(document).ready(function () {//TODO: Add all steps to create the gallery
     console.log("ready");
     console.log(lastCardNumber());
    
     createCardFromArrOgObj(contents)
-
-
-    /*
-    contents.forEach(item => {//Stoppa loopen i funktionen istället
-    
-        createCardfromObj(item);
-            
-        });
-    
-    */
-
+    pageContentSwitch();
 });
 
 function lastCardNumber() {//Returns the number of .card present in the #cardspace
@@ -185,7 +171,7 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
         let showPic = item["filenames"][0]
         let altText = `Picture of the ${item["category"]} named ${item["projectname"]}`
         $(`#card${n}`).append(`<div class='card-img-container'><img id='card${n}-img' src="../../images/${showPic}" alt="${altText}" ></img></div>`);//Create an image for the card and add it to the card
-
+        $(`#card${n}`).append(`<a class='details-link' id='${item["projectname"]}-details-link' href='javascript:;'>Link<a>`);//Create a title for the card and add it to the card
 
        
         for (let key in item) {
@@ -197,25 +183,35 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
             }
         }
         $(`#card${n}`).append(`<button class='details'>Detailed info</button>`);
+        $(`#card${n}`).on("click", function (){detailPageGenerator(item)});
 
         n++;
 
-
-        /*
-        $(`#card${n}`).text("Hello"+n);
-        $(`#card${n}`).append(`<h2></h2>`).text(object.projectname);
-        $(`#card${n}`).append(`<p></p>`).text(object.date);
-        $(`#card${n}`).append(`<p></p>`);
-        $(`#card${n}`).append(`<p></p>`);
-        $(`#card${n}`).append(`<p></p>`);
-        $(`#card${n}`).append(`<p></p>`);
-        $(`#card${n}`).append(`<p></p>`);
-        $(`#card${n}`).append(`<a></a>`);
-        */
     });
 
 }
+function addLinkToDetailPage(){
 
+
+}
+function detailPageGenerator(item){//Ej kontrollerad
+    //TODO: Add a back button
+    //TODO: Replace heading
+    //TODO: Add remaining info
+    $("#cardspace").children(".card").remove();
+    
+
+    
+    let index=1;
+    item["filenames"].forEach(filename => {
+
+        $(`#cardspace`).append(`<div class='photocard' id='card${index}'></div>`);//Create a new card
+
+        $(`#card${index}`).append(`<div class='photocard-img-container'><img id='pic${index}' src="../../images/${filename}" alt="alt text ${index}" ></img></div>`);
+        //TODO:Fix alt-text
+        index++;
+    });
+}
 function createCardfromObj(object) {//Creates nr cards with class "card" and id "cardn"
     let n = lastCardNumber();
     $(`#cardspace`).append(`<div class='card' id='card${n}'></div>`);
@@ -232,13 +228,38 @@ function createCardfromObj(object) {//Creates nr cards with class "card" and id 
 
 }
 
-function tester(current, n) {
-    let thisCard = $(`#card${n}`)
-    function placeCardContents(card, el, content) {
-        card.find(el).text(content)
+function limitCardNr(nr) {//Limits the number of cards to nr
+    let cards = $("#cardspace").children(".card").length;
+    if (cards > nr) {
+        $("#cardspace").children(".card").slice(nr).remove();
     }
-    placeCardContents(thisCard, "h2", current.projectname)
-    placeCardContents(thisCard, "p", current.date)
-    placeCardContents(thisCard, "p", current.description)
 }
 
+function readjustCardSpace(){
+    $("main").css("grid-row", "1/4");
+}
+
+function pageContentSwitch(){//Switches the number of cards displayed depending on the page shown
+    let page = window.location.pathname;
+
+    switch (page) {
+        case "/index.html":
+            console.log("index"+page);
+            limitCardNr(6);
+            break;
+        case "/list.html":
+            console.log("list"+page);
+            limitCardNr(10);
+            readjustCardSpace();
+            break;
+        case "/about.html":
+            console.log("about"+page);
+            break;
+        case "/details.html":
+            console.log("contact"+page);
+            break;
+        default:
+            console.log("default "+page);
+
+}
+}
