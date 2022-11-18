@@ -183,35 +183,20 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
             }
         }
         $(`#card${n}`).append(`<button class='details'>Detailed info</button>`);
-        $(`#card${n}`).on("click", function (){detailPageGenerator(item)});
+        $(`#card${n}`).on("click", function (){console.log(`This is ktem before redirect `+item),goToDetailPage(item), console.log(`This is ktem after redirect `+item)});
 
         n++;
 
     });
 
 }
-function addLinkToDetailPage(){
+function goToDetailPage(item){
+    localStorage.setItem("viewitem", JSON.stringify(item));
+    window.location.href = "/details.html";
 
 
 }
-function detailPageGenerator(item){//Ej kontrollerad
-    //TODO: Add a back button
-    //TODO: Replace heading
-    //TODO: Add remaining info
-    $("#cardspace").children(".card").remove();
-    
 
-    
-    let index=1;
-    item["filenames"].forEach(filename => {
-
-        $(`#cardspace`).append(`<div class='photocard' id='card${index}'></div>`);//Create a new card
-
-        $(`#card${index}`).append(`<div class='photocard-img-container'><img id='pic${index}' src="../../images/${filename}" alt="alt text ${index}" ></img></div>`);
-        //TODO:Fix alt-text
-        index++;
-    });
-}
 function createCardfromObj(object) {//Creates nr cards with class "card" and id "cardn"
     let n = lastCardNumber();
     $(`#cardspace`).append(`<div class='card' id='card${n}'></div>`);
@@ -228,7 +213,7 @@ function createCardfromObj(object) {//Creates nr cards with class "card" and id 
 
 }
 
-function limitCardNr(nr) {//Limits the number of cards to nr
+function limitCardNr(nr) {//Limits the number of cards shown to nr
     let cards = $("#cardspace").children(".card").length;
     if (cards > nr) {
         $("#cardspace").children(".card").slice(nr).remove();
@@ -243,6 +228,7 @@ function pageContentSwitch(){//Switches the number of cards displayed depending 
     let page = window.location.pathname;
 
     switch (page) {
+        case "/":
         case "/index.html":
             console.log("index"+page);
             limitCardNr(6);
@@ -256,7 +242,7 @@ function pageContentSwitch(){//Switches the number of cards displayed depending 
             console.log("about"+page);
             break;
         case "/details.html":
-            console.log("contact"+page);
+            console.log("details"+page);
             break;
         default:
             console.log("default "+page);
