@@ -241,4 +241,3 @@ function tester(current, n) {
     placeCardContents(thisCard, "p", current.date)
     placeCardContents(thisCard, "p", current.description)
 }
-
