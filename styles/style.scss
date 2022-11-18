@@ -13,7 +13,9 @@ div {
 header {
     grid-column: 2/8;
     grid-row: 1/2;
-    margin: auto;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
     width: 72vw;
     //height: 40%;
 
@@ -34,6 +36,7 @@ header {
 aside {
     grid-column: 1/2;
     grid-row: 1/4;
+    margin-top: 2rem;
     
     & nav {
         height: 90%;

@@ -179,6 +179,8 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
             if (key == "projectname") {
                 $(`#card${n}`).append(`<h2>${item[key]}</h2>`);
             } else {
+    
+                    
                 $(`#card${n}`).append(`<p class='${key}'><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);//Create a new card
             }
         }
