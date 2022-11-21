@@ -217,10 +217,10 @@ body #presentation .segment#vd-info-box .image-container img {
   height: 100%;
   object-fit: cover;
 }
-body #contact-form {
+body #contactform {
   margin: auto;
 }
-body #contact-form label {
+body #contactform label {
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -228,11 +228,11 @@ body #contact-form label {
   font-size: large;
   padding: 1.5rem;
 }
-body #contact-form textarea {
+body #contactform textarea {
   width: 100%;
   padding: 1.5rem;
 }
-body #contact-form input {
+body #contactform input {
   width: 60%;
   box-sizing: border-box;
   border: 1px, ridge, #350f94;
@@ -240,19 +240,60 @@ body #contact-form input {
   margin-left: 1.5rem;
   margin-right: 0.5rem;
 }
-body #contact-form input[type=submit] {
+body #contactform input[type=submit] {
   font-size: 1rem;
   border-radius: 4px;
   box-sizing: border-box;
   margin-left: 27%;
   border: none;
 }
-body #contact-form textarea {
+body #contactform textarea {
   width: 50%;
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   resize: none;
+}
+body #projectregistration {
+  width: 100%;
+  grid-column: inherit;
+  grid-row: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+body #projectregistration div {
+  display: flex;
+  gap: 1rem;
+}
+body #projectregistration label {
+  width: 10%;
+  display: inline-block;
+  text-align: end;
+}
+body #projectregistration input {
+  width: 40%;
+  margin-left: 40%;
+  display: block;
+  box-sizing: border-box;
+  border: 1px, ridge, #350f94;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+body #projectregistration input[type=submit] {
+  font-size: 1rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: 27%;
+  border: none;
+}
+body #projectregistration .filedrop {
+  display: flex;
+  background-color: #350f94;
+}
+body #projectregistration .filedrop input {
+  display: inline;
 }
 
 /*# sourceMappingURL=style.css.map */

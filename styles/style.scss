@@ -279,7 +279,7 @@ main {
 .contact-form-container{
     
 }
-#contact-form{
+#contactform{
     margin: auto;
    & label{
        //display: inline-block;
@@ -329,5 +329,59 @@ main {
          margin-right: 0.5rem;
          resize: none;
     }
+}
+#projectregistration{
+    width: 100%;
+    grid-column: inherit;
+    grid-row: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    & div{
+        display: flex;
+        gap: 1rem;
+
+    }
+   
+    
+    & label{
+        width: 10%;
+        display: inline-block;
+        text-align: end;
+      
+    }
+    & input{
+        width: 40%;
+        margin-left: 40%;
+        display: block;
+        box-sizing: border-box;
+        border: 1px, ridge, #350f94;
+        
+         margin-bottom: 0.5rem;
+         margin-left: 0.5rem;
+         margin-right: 0.5rem;
+
+         &[type="submit"]{
+             //padding: 0.5rem;
+             font-size: 1rem;
+
+             border-radius: 4px;
+             box-sizing: border-box;
+             margin-left:27%;
+             border:none;
+             
+         }
+
+    }
+
+    & .filedrop{
+        display: flex;
+        background-color: #350f94;
+        & input{
+            display: inline;
+        }
+    }
+
 }
 }

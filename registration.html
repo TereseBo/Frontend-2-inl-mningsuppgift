@@ -6,49 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/scripts/registrationform-script.js"></script>
+    <script>
+    $(document).ready(function () {
+    $("main").css("grid-row", "1/4");
+    });
+   </script>
+    <link rel="stylesheet" href="/styles/style.css">
     <title>Weave Registration</title>
 </head>
 <body>
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="list.html">List</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="registration.html">Registration of new project</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
 
     <form id="projectregistration" action="#">
+        <div>
         <label for="projectname">Project name</label>
-        <input type="text" name="projectname" id="projectname">
-        <br>
+        <input type="text" name="projectname" id="projectname" placeholder="Name of project">
+    </div>
+    <div>
         <label for="date">Off the loom</label>
         <input type="date" name="date" id="date">
-        <br>
+    </div>
+    <div>
         <label for="description">Short description</label>
-        <input type="text" name="description" id="description">
-        <br>
+        <input type="text" name="description" id="description" placeholder="Describe your item">
+        </div>
+        <div>
         <label for="category">Type of item</label>
-        <input type="category" name="category" id="category">
-        <br>
+        <input type="category" name="category" id="category" >
+        </div>
+        <div>
         <label for="warp">Warp fibers</label>
         <input type="text" name="warp" id="warp">
-        <br>
+        </div>
+        <div>
         <label for="weft">Weft fibers</label>
         <input type="text" name="weft" id="weft">
-        <br>
-        <label for="details">Details (fringes, ladders, etc.)</label>
-        <input type="text" name="details" id="details">
-        <br>
-        <label for="img1">Picture 1</label>
+        </div>
+        <div>
+        <label for="details">Details </label>
+        <input type="text" name="details" id="details" placeholder="fringes, ladders, etc.">
+        </div>
+        <div class="filedrop">
+        <label for="img1">Pictures</label>
         <input type="file" name="img1" id="img1">
         <br>
-        <label for="img2">Picture 2</label>
+        <label for="img2"></label>
         <input type="file" name="img2" id="img2">
         <br>
-        <label for="img3">Picture 3</label>
+        <label for="img3"></label>
         <input type="file" name="img4" id="img4">
         <br>
-        <label for="img4">Picture 4</label>
+        <label for="img4"></label>
         <input type="file" name="img4" id="img4">
+    </div>
         <br>
         
         <br>
         <input type="submit" value="Submit">
 
     </form>
+</main>
     
 </body>
 
