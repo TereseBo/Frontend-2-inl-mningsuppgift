@@ -3,21 +3,47 @@ body {
   grid-template-columns: repeat(8, 12vw);
   grid-template-rows: repeat(3, 33vh);
   gap: 1rem;
+  background-color: #c2c1c3;
 }
-
-div {
-  padding: 0%;
+body .basic-info-container,
+body .more-info-container {
+  padding-top: 0;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-style: italic;
 }
-
-header {
+body .basic-info-container h2,
+body .more-info-container h2 {
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+body .basic-info-container .key,
+body .more-info-container .key {
+  font-weight: 700;
+}
+body .basic-info-container button,
+body .more-info-container button {
+  margin-top: 0.5rem;
+}
+body .more-info-container {
+  display: none;
+}
+body header {
   grid-column: 2/8;
   grid-row: 1/2;
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
   width: 72vw;
+  background-color: #e2dfe3;
 }
-header #header-img-container {
+body header h1 {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+body header #header-img-container {
   width: 100%;
   height: 15rem;
   background-image: url(../images/header.jpg);
@@ -25,39 +51,38 @@ header #header-img-container {
   background-position: center;
   background-repeat: no-repeat;
 }
-header #header-text-container {
+body header #header-text-container {
   width: 100%;
-  background-color: #77a0d6;
+  background-color: #e2dfe3;
 }
-header .info-box h2 {
+body header .info-box h2 {
   font-size: 1.5rem;
   font-weight: 700;
   color: #000;
 }
-header .info-box p {
+body header .info-box p {
   font-size: 1rem;
   font-weight: 400;
   color: #000;
 }
-header h2 {
+body header h2 {
   padding: 0;
   margin-bottom: 0;
 }
-header p {
+body header p {
   padding: 0;
   margin-top: 0;
   line-break: loose;
 }
-
-aside {
+body aside {
   grid-column: 1/2;
   grid-row: 1/4;
   margin-top: 2rem;
 }
-aside nav {
+body aside nav {
   height: 90%;
 }
-aside nav ul {
+body aside nav ul {
   box-sizing: border-box;
   padding: 0;
   display: flex;
@@ -65,15 +90,15 @@ aside nav ul {
   height: 100%;
   margin-left: 1rem;
 }
-aside nav ul li {
+body aside nav ul li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-aside nav ul li:last-child {
+body aside nav ul li:last-child {
   margin-top: auto;
 }
-aside nav ul li a {
+body aside nav ul li a {
   text-decoration: none;
   color: black;
   font-size: 1rem;
@@ -82,77 +107,41 @@ aside nav ul li a {
   padding: 1rem;
   border-bottom: 1px solid black;
 }
-aside nav ul li a:hover {
+body aside nav ul li a:hover {
   background-color: #f1f1f1;
 }
-aside nav ul li a.active {
-  background-color: #77a0d6;
+body aside nav ul li a:active {
+  background-color: #2b7ae1;
 }
-
-main {
+body main {
   grid-column: 2/8;
   grid-row: 2/4;
 }
-main #cardspace {
+body main #cardspace {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-main #cardspace .card {
+body main #cardspace .card {
   width: 25rem;
   height: auto;
   margin: 1%;
-  background-color: #f1f1f1;
+  background-color: #e2dfe3;
   border: 1px solid black;
   border-radius: 5px;
-  /*
-              & h2 {
-                  font-size: 1.5rem;
-                  font-weight: 700;
-                  color: #000;
-                  margin-bottom: 0;
-                  padding-left: 1.5rem;
-
-              }*/
 }
-main #cardspace .card p {
-  font-size: 1rem;
-  font-weight: 400;
-  font-style: italic;
-  color: #000;
-  margin: 0.5rem;
-}
-main #cardspace .card p .key {
-  font-weight: 700;
-}
-main #cardspace .card button {
-  margin-top: 0.5rem;
-}
-main #cardspace .card .card-img-container {
+body main #cardspace .card .card-img-container {
   height: 12.5rem;
   background-color: #f1f1f1;
   border-radius: 5px;
 }
-main #cardspace .card .card-img-container img {
+body main #cardspace .card .card-img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border: 4px, dotted #350f94;
 }
-main #cardspace .card .basic-info-container {
-  padding-top: 0;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-main #cardspace .card .more-info-container {
-  display: none;
-  padding-top: 0;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-main #cardspace .photocard {
+body main #cardspace .photocard {
   width: 20%;
   height: auto;
   margin: 1%;
@@ -160,71 +149,49 @@ main #cardspace .photocard {
   border: 1px solid black;
   border-radius: 5px;
 }
-main #cardspace .photocard:hover {
+body main #cardspace .photocard:hover {
   border-radius: 5px;
   transform: scale(1.1);
 }
-main #cardspace .photocard .photocard-img-container {
+body main #cardspace .photocard .photocard-img-container {
   height: 100%;
   background-color: #f1f1f1;
   border-radius: 5px;
 }
-main #cardspace .photocard .photocard-img-container img {
+body main #cardspace .photocard .photocard-img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
-
-/*
-#detailspage-image-box {
-    width: 100vw;
-    height: 10vh;
-    display: flex;
-
-
-
-    & #detailspage-image-container {
-
-        width: 100%;
-        height: 50%;
-
-
-        & img {
-            max-width: 500px;
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-*/
-#presentation {
+body #presentation {
   width: 100vw;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  margin-top: 2rem;
 }
-#presentation .segment {
+body #presentation .segment {
   width: 80%;
   height: 30%;
   display: flex;
   flex-direction: row;
-  background-color: #771749;
+  background-color: #e2dfe3;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
   margin: 1%;
   padding: 1%;
 }
-#presentation .segment#team-info-box .image-container {
+body #presentation .segment#team-info-box .image-container {
   width: 100%;
   height: 30%;
 }
-#presentation .segment#team-info-box .image-container img {
+body #presentation .segment#team-info-box .image-container img {
   width: 100%;
   height: 100px;
   object-fit: cover;
 }
-#presentation .segment#vd-info-box a {
+body #presentation .segment#vd-info-box a {
   text-decoration: none;
   color: black;
   font-size: 1rem;
@@ -235,20 +202,57 @@ main #cardspace .photocard .photocard-img-container img {
   margin-left: 1rem;
   text-align: center;
 }
-#presentation .segment#vd-info-box a:hover {
+body #presentation .segment#vd-info-box a:hover {
   background-color: #f1f1f1;
 }
-#presentation .segment#vd-info-box a.active {
+body #presentation .segment#vd-info-box a.active {
   background-color: #77a0d6;
 }
-#presentation .segment#vd-info-box .image-container {
+body #presentation .segment#vd-info-box .image-container {
   width: 40%;
   height: 100px;
 }
-#presentation .segment#vd-info-box .image-container img {
+body #presentation .segment#vd-info-box .image-container img {
   width: 90%;
   height: 100%;
   object-fit: cover;
+}
+body #contact-form {
+  margin: auto;
+}
+body #contact-form label {
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-weight: 700;
+  font-size: large;
+  padding: 1.5rem;
+}
+body #contact-form textarea {
+  width: 100%;
+  padding: 1.5rem;
+}
+body #contact-form input {
+  width: 60%;
+  box-sizing: border-box;
+  border: 1px, ridge, #350f94;
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+}
+body #contact-form input[type=submit] {
+  font-size: 1rem;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: 27%;
+  border: none;
+}
+body #contact-form textarea {
+  width: 50%;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  resize: none;
 }
 
 /*# sourceMappingURL=style.css.map */
