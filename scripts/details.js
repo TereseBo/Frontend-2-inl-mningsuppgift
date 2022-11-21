@@ -24,9 +24,9 @@ function detailsMainGenerator(item) {
 function detailsHeaderGenerator(item) {
     $(`#header-img-container`).remove();
     $(`header h1`).text(item["projectname"]);
-    $(`header`).append(`<div class='basic-information''></div>`);
-    $(`header`).append(`<div class='more-information'></div>`);
-    $(`.more-information`).css("display", "none");
+    $(`header`).append(`<div class='basic-info-container''></div>`);
+    $(`header`).append(`<div class='more-info-container'></div>`);
+    $(`.more-info-container`).css("display", "none");
    // $(`.basic-information`).append(`<p><span class='key'>Category: </span><span class='value'>${item["category"]}</<span></p>`);
     aggregateInfo(item);
 }
@@ -39,23 +39,23 @@ function aggregateInfo(item) {
             case "weft":
             case "warp":
             case "details":
-                $(`.more-information`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
+                $(`.more-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
                 break;
             case "description":
                 //$(`.basic-information`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
             case "category":
-                $(`.basic-information`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
+                $(`.basic-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
                 break;
             case "date":
-                $(`.basic-information`).prepend(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
+                $(`.basic-info-container`).prepend(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
             case "filenames":
             case "projectname":
             default:
                 break;
         }
     }
-    $(`.basic-information`).append(`<button class='details'>Detailed info</button>`);
-    $(`.basic-information`).on("click", function (){$(`.more-information`).toggle();});
+    $(`.basic-info-container`).append(`<button class='details'>Detailed info</button>`);
+    $(`.details`).on("click", function (){$(`.more-info-container`).toggle();});
 }
 
 $(document).ready(function () {//TODO: Add all steps to create the gallery

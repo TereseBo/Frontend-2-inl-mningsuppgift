@@ -4,8 +4,10 @@ body {
     grid-template-rows: repeat(3, 33vh);
     gap: 1rem;
     //background-color: #77a0d6;
-}
 
+
+
+}
 div {
     padding: 0%;
 }
@@ -21,25 +23,28 @@ header {
 
     & #header-img-container {
         width: 100%;
-        height: 10rem;
+        height: 15rem;
         background-image: url(../images/header.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
-& #header-text-container {
-    width: 100%;
 
-    
-    
-    background-color: #77a0d6;
+    & #header-text-container {
+        width: 100%;
+
+
+
+        background-color: #77a0d6;
     }
-    & .info-box{
+
+    & .info-box {
         & h2 {
             font-size: 1.5rem;
             font-weight: 700;
             color: #000;
         }
+
         & p {
             font-size: 1rem;
             font-weight: 400;
@@ -47,12 +52,13 @@ header {
         }
     }
 
-    & h2{
+    & h2 {
         padding: 0;
         margin-bottom: 0;
-        
+
     }
-    & p{
+
+    & p {
         padding: 0;
         margin-top: 0;
         line-break: loose;
@@ -66,41 +72,41 @@ aside {
 
     & nav {
         height: 90%;
-    }
 
-    & ul {
-        box-sizing: border-box;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        margin-left: 1rem;
-    }
+        & ul {
+            box-sizing: border-box;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            margin-left: 1rem;
 
-    & li {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+            & li {
+                list-style: none;
+                margin: 0;
+                padding: 0;
 
-        &:last-child {
-            margin-top: auto;
-        }
+                &:last-child {
+                    margin-top: auto;
+                }
 
-        & a {
-            text-decoration: none;
-            color: black;
-            font-size: 1rem;
-            font-weight: 600;
-            display: block;
-            padding: 1rem;
-            border-bottom: 1px solid black;
+                & a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    display: block;
+                    padding: 1rem;
+                    border-bottom: 1px solid black;
 
-            &:hover {
-                background-color: #f1f1f1;
-            }
+                    &:hover {
+                        background-color: #f1f1f1;
+                    }
 
-            &.active {
-                background-color: #77a0d6;
+                    &.active {
+                        background-color: #77a0d6;
+                    }
+                }
             }
         }
     }
@@ -109,70 +115,106 @@ aside {
 main {
     grid-column: 2/8;
     grid-row: 2/4;
-}
 
-#cardspace {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    & #cardspace {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+       // padding-top: 5rem;
 
-
-
-    & .card {
-        width: 25rem;
-        height: auto;
-        margin: 1%;
-        background-color: #f1f1f1;
-        border: 1px solid black;
-        border-radius: 5px;
-
-
-        & .card-img-container {
-
-            height: 60%;
+        & .card {
+            width: 25rem;
+            height: auto;
+            margin: 1%;
             background-color: #f1f1f1;
-            //padding-top: 10%;
+            border: 1px solid black;
             border-radius: 5px;
+/*
+            & h2 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #000;
+                margin-bottom: 0;
+                padding-left: 1.5rem;
 
+            }*/
+            & p {
+                font-size: 1rem;
+                font-weight: 400;
+                font-style: italic;
+                color: #000;
+               margin: 0.5rem;
+                //padding-left: 1rem;
+
+                & .key{
+                    font-weight: 700;
+                }
+            }
+
+            & button{
+                margin-top: 0.5rem;            }
+
+            & .card-img-container {
+                height: 12.5rem;
+                background-color: #f1f1f1;
+                border-radius: 5px;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border: 4px, dotted #350f94;
+                }
+            }
+
+            & .basic-info-container{
+                padding-top:0;
+                padding-bottom: 1rem;
+                padding-left:1rem;
+                padding-right: 1rem;
+                
+            }
+
+            & .more-info-container {
+                display: none;
+                padding-top:0;
+                padding-bottom: 1rem;
+                padding-left:1rem;
+                padding-right: 1rem;
+            }
         }
 
-        & img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        & .photocard {
+            width: 20%;
+            height: auto;
+            margin: 1%;
+            background-color: #f1f1f1;
+            border: 1px solid black;
+            border-radius: 5px;
 
-            border: 4px, dotted #350f94;
+            &:hover {
+                border-radius: 5px;
+                transform: scale(1.1);
+            }
 
+            & .photocard-img-container {
+                height: 100%;
+                background-color: #f1f1f1;
+                border-radius: 5px;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+            }
         }
     }
 }
 
 
-#cardspace {
-    & .photocard {
-        width: 20%;
-        height: auto;
-        margin: 1%;
-        background-color: #f1f1f1;
-        border: 1px solid black;
-        border-radius: 5px;
-
-
-        & .photocard-img-container {
-
-            height: 100%;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-        }
-
-        & img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-}
-
+/*
 #detailspage-image-box {
     width: 100vw;
     height: 10vh;
@@ -193,9 +235,8 @@ main {
         }
     }
 }
-
+*/
 #presentation {
-
     width: 100vw;
     //height: 10vh;
     display: flex;
@@ -207,34 +248,27 @@ main {
         height: 30%;
         display: flex;
         flex-direction: row;
-
-
         background-color: #771749;
         border: 1px solid rgb(0, 0, 0);
         border-radius: 5px;
         margin: 1%;
         padding: 1%;
 
-        &#team-info-box{
+        &#team-info-box {
             & .image-container {
                 width: 100%;
                 height: 30%;
-                
+
                 & img {
                     width: 100%;
                     height: 100px;
                     object-fit: cover;
                 }
-
- 
-    
-                
             }
-
         }
 
-        &#vd-info-box{
-            & a{
+        &#vd-info-box {
+            & a {
                 text-decoration: none;
                 color: black;
                 font-size: 1rem;
@@ -244,24 +278,24 @@ main {
                 border-bottom: 1px solid black;
                 margin-left: 1rem;
                 text-align: center;
-    
+
                 &:hover {
                     background-color: #f1f1f1;
                 }
-    
+
                 &.active {
                     background-color: #77a0d6;
                 }
             }
-            
+
             & .image-container {
 
                 width: 40%;
                 height: 100px;
-    
-    
+
+
                 & img {
-                    
+
                     width: 90%;
                     height: 100%;
                     object-fit: cover;
@@ -270,8 +304,4 @@ main {
 
         }
     }
-
-       
-    
 }
-

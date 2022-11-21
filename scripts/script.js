@@ -155,7 +155,7 @@ const contents = [
 $(document).ready(function () {//TODO: Add all steps to create the gallery
     console.log("ready");
     console.log(lastCardNumber());
-   
+
     createCardFromArrOgObj(contents)
     pageContentSwitch();
 });
@@ -170,29 +170,50 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
         $(`#cardspace`).append(`<div class='card' id='card${n}'></div>`);//Create a new card
         let showPic = item["filenames"][0]
         let altText = `Picture of the ${item["category"]} named ${item["projectname"]}`
-        $(`#card${n}`).append(`<div class='card-img-container'><img id='card${n}-img' src="../../images/${showPic}" alt="${altText}" ></img></div>`);//Create an image for the card and add it to the card
-        $(`#card${n}`).append(`<a class='details-link' id='${item["projectname"]}-details-link' href='javascript:;'>Link<a>`);//Create a title for the card and add it to the card
+        $(`#card${n}`).append(`<a class='details-link' id='${item["projectname"]}-details-link' href='javascript:;'><div class='card-img-container'><img id='card${n}-img' src="../../images/${showPic}" alt="${altText}" ></img></div><a>`);//Create an image for the card and add it to the card
+        $(`#card${n}`).append(`<div class='basic-info-container card${n}-basic-info-container' id='card${n}-basic-info-container'></div>`);//Create a title for the card and add it to the card
+        $(`#card${n}`).append(`<div class='more-info-container' id='card${n}-more-info-container'></div>`);//Create a title for the card and add it to the card
 
-       
+
         for (let key in item) {
             let displayKey = key[0].toUpperCase() + key.slice(1);//Capitalize the first letter of the key
-            if (key == "projectname") {
-                $(`#card${n}`).append(`<h2>${item[key]}</h2>`);
-            } else {
-    
-                    
-                $(`#card${n}`).append(`<p class='${key}'><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);//Create a new card
+            switch (key) {
+                case "projectname":
+                    $(`#card${n}-basic-info-container`).prepend(`<h2>${item[key]}</h2>`);//Create a title for the card and add it to the card
+                    break;
+                case "weft":
+                case "warp":
+                case "details":
+                    $(`#card${n}-more-info-container`).append(`<p><span class='key'>${displayKey}:</span><span class='value'> ${item[key]}</<span></p>`);//Add details to the more-info-container
+                    break;
+                case "description":
+                case "category":
+                    $(`#card${n}-basic-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);//Add details to the basic-info-container
+                case "description":
+                    break;
+                case "date":
+                    $(`#card${n}-basic-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
+                    break;
+                default:
+                    break;
             }
-        }
-        $(`#card${n}`).append(`<button class='details'>Detailed info</button>`);
-        $(`#card${n}`).on("click", function (){console.log(`This is ktem before redirect `+item),goToDetailPage(item), console.log(`This is ktem after redirect `+item)});
 
+            continue;
+        }
+        $(`#card${n}-basic-info-container`).append(`<button class='details' id='card${n}-details'>Detailed info</button>`);
+        $(`#card${n}-details`).click(function () {
+            let name=$(this).attr('id').slice(0,-8);
+            console.log(name);
+            $(`#${name}-more-info-container`).toggle();
+        });
+        $(`#card${n}-img`).click(function () {goToDetailPage(item)});
         n++;
 
     });
 
+
 }
-function goToDetailPage(item){
+function goToDetailPage(item) {
     localStorage.setItem("viewitem", JSON.stringify(item));
     window.location.href = "/details.html";
 
@@ -222,32 +243,32 @@ function limitCardNr(nr) {//Limits the number of cards shown to nr
     }
 }
 
-function readjustCardSpace(){
+function readjustCardSpace() {
     $("main").css("grid-row", "1/4");
 }
 
-function pageContentSwitch(){//Switches the number of cards displayed depending on the page shown
+function pageContentSwitch() {//Switches the number of cards displayed depending on the page shown
     let page = window.location.pathname;
 
     switch (page) {
         case "/":
         case "/index.html":
-            console.log("index"+page);
+            console.log("index" + page);
             limitCardNr(6);
             break;
         case "/list.html":
-            console.log("list"+page);
+            console.log("list" + page);
             limitCardNr(10);
             readjustCardSpace();
             break;
         case "/about.html":
-            console.log("about"+page);
+            console.log("about" + page);
             break;
         case "/details.html":
-            console.log("details"+page);
+            console.log("details" + page);
             break;
         default:
-            console.log("default "+page);
+            console.log("default " + page);
 
-}
+    }
 }
