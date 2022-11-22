@@ -222,6 +222,7 @@ function limitCardNr(nr) {//Limits the number of cards shown to nr
 
 function readjustCardSpace() {//Readjusts the cardspace to cover the header area
     $("main").css("grid-row", "1/4");
+    $("#cardspace").css("margin-top", "8rem");
 }
 
 function pageContentLimiter() {//Switches the number of cards displayed and readjusts cardspace if necessary, depending on the window-location
