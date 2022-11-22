@@ -1,13 +1,13 @@
 
 
-let item = JSON.parse(localStorage.getItem("viewitem"));
 
-function detailPageGenerator(item) {//Ej kontrollerad
+
+function detailPageGenerator(item) {//Generates the details page
     detailsHeaderGenerator(item);
     detailsMainGenerator(item);
 
 }
-function detailsMainGenerator(item) {
+function detailsMainGenerator(item) {//Creates the main content of the details page
     let index = 1;
     item["filenames"].forEach(filename => {
 
@@ -17,22 +17,19 @@ function detailsMainGenerator(item) {
      
         index++;
     });
-
 }
 
-
-function detailsHeaderGenerator(item) {
-    $(`#header-img-container`).remove();
+function detailsHeaderGenerator(item) {//Creates the header of the details page
     $(`header h1`).text(item["projectname"]);
     $(`header`).append(`<div class='basic-info-container''></div>`);
     $(`header`).append(`<div class='more-info-container'></div>`);
     $(`.more-info-container`).css("display", "none");
-   // $(`.basic-information`).append(`<p><span class='key'>Category: </span><span class='value'>${item["category"]}</<span></p>`);
+    $(`header`).css("justify-content", "flex-start");
+    $(`header`).css("gap", "0.5rem");
     aggregateInfo(item);
 }
 
-function aggregateInfo(item) {
-    
+function aggregateInfo(item) {//Adds info to the header from the item
     for (let key in item) {
         let displayKey = key[0].toUpperCase() + key.slice(1);//Capitalize the first letter of the key
         switch (key) {
@@ -42,7 +39,6 @@ function aggregateInfo(item) {
                 $(`.more-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
                 break;
             case "description":
-                //$(`.basic-information`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
             case "category":
                 $(`.basic-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
                 break;
@@ -58,8 +54,9 @@ function aggregateInfo(item) {
     $(`.details`).on("click", function (){$(`.more-info-container`).toggle();});
 }
 
-$(document).ready(function () {//TODO: Add all steps to create the gallery
-    console.log("ready");
+let item = JSON.parse(localStorage.getItem("viewitem"));//Get the item from local storage
+$(document).ready(function () {//Runs when the page is loaded
+
     detailPageGenerator(item);
 
 });

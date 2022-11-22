@@ -1,6 +1,6 @@
 
 
-const contents = [
+const contents = [//An array of objects representing the items to be displayed in cards/details-page
     {
         "projectname": "Birdie",
         "date": "2022-02-08",
@@ -152,13 +152,7 @@ const contents = [
         ]
     }
 ]
-$(document).ready(function () {//TODO: Add all steps to create the gallery
-    console.log("ready");
-    console.log(lastCardNumber());
 
-    createCardFromArrOgObj(contents)
-    pageContentSwitch();
-});
 
 function lastCardNumber() {//Returns the number of .card present in the #cardspace
     let cards = $("#cardspace").children(".card").length;
@@ -173,7 +167,6 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
         $(`#card${n}`).append(`<a class='details-link' id='${item["projectname"]}-details-link' href='javascript:;'><div class='card-img-container'><img id='card${n}-img' src="../../images/${showPic}" alt="${altText}" ></img></div><a>`);//Create an image for the card and add it to the card
         $(`#card${n}`).append(`<div class='basic-info-container card${n}-basic-info-container' id='card${n}-basic-info-container'></div>`);//Create info-container and add to the card
         $(`#card${n}`).append(`<div class='more-info-container' id='card${n}-more-info-container'></div>`);//Create info-container and add to the card
-
 
         for (let key in item) {
             let displayKey = key[0].toUpperCase() + key.slice(1);//Capitalize the first letter of the key
@@ -197,7 +190,6 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
                 default:
                     break;
             }
-
             continue;
         }
         $(`#card${n}-basic-info-container`).append(`<button class='details' id='card${n}-details'>Detailed info</button>`);
@@ -208,33 +200,18 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
         });
         $(`#card${n}-img`).click(function () {goToDetailPage(item)});
         n++;
-
     });
 
 
 }
-function goToDetailPage(item) {
+function goToDetailPage(item) {//Save the clicked item to localstorage and go to the detail page
     localStorage.setItem("viewitem", JSON.stringify(item));
     window.location.href = "/details.html";
 
 
 }
 
-function createCardfromObj(object) {//Creates nr cards with class "card" and id "cardn"
-    let n = lastCardNumber();
-    $(`#cardspace`).append(`<div class='card' id='card${n}'></div>`);
-    $(`#card${n}`).text("Hello" + n);
-    $(`#card${n}`).append(`<h2></h2>`).text(object.projectname);
-    $(`#card${n}`).append(`<p></p>`).text(object.date);
-    $(`#card${n}`).append(`<p></p>`);
-    $(`#card${n}`).append(`<p></p>`);
-    $(`#card${n}`).append(`<p></p>`);
-    $(`#card${n}`).append(`<p></p>`);
-    $(`#card${n}`).append(`<p></p>`);
-    $(`#card${n}`).append(`<a></a>`);
 
-
-}
 
 function limitCardNr(nr) {//Limits the number of cards shown to nr
     let cards = $("#cardspace").children(".card").length;
@@ -243,13 +220,12 @@ function limitCardNr(nr) {//Limits the number of cards shown to nr
     }
 }
 
-function readjustCardSpace() {
+function readjustCardSpace() {//Readjusts the cardspace to cover the header area
     $("main").css("grid-row", "1/4");
 }
 
-function pageContentSwitch() {//Switches the number of cards displayed depending on the page shown
+function pageContentLimiter() {//Switches the number of cards displayed and readjusts cardspace if necessary, depending on the window-location
     let page = window.location.pathname;
-
     switch (page) {
         case "/":
         case "/index.html":
@@ -262,13 +238,13 @@ function pageContentSwitch() {//Switches the number of cards displayed depending
             readjustCardSpace();
             break;
         case "/about.html":
-            console.log("about" + page);
-            break;
         case "/details.html":
-            console.log("details" + page);
-            break;
         default:
-            console.log("default " + page);
-
+            break;
     }
 }
+$(document).ready(function () {//This is the code that runs when the page is loaded
+    console.log(lastCardNumber());
+    createCardFromArrOgObj(contents)
+    pageContentLimiter();
+});

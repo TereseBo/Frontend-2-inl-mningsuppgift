@@ -1,5 +1,5 @@
 
-function projectRegistration() {//Collects form data and file names
+function projectRegistration() {//Collects form data and file names, alerts user and redirects to home page
 
     let currentData=collectFormData("#projectregistration");//Creates object from form data
     currentData["filenames"]=collectFileNames();//Adds filenames to object
@@ -26,3 +26,10 @@ function collectFileNames(){//Extracts file-name from string by splitting at \ a
     })
     return fileNames;
 }
+$(document).ready(function () {
+    $("main").css("grid-row", "1/4");//Readjusts main to cover the header area
+    $("#projectregistration").submit(function (event) {//Adds event listener to form
+        event.preventDefault();
+        projectRegistration();
+    });
+});

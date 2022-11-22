@@ -8,9 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/scripts/registrationform-script.js"></script>
     <script>
-        $(document).ready(function () {
-            $("main").css("grid-row", "1/4");
-        });
+
     </script>
     <link rel="stylesheet" href="/styles/style.css">
     <title>Weave Registration</title>
@@ -67,7 +65,7 @@
                     <br>
 
                     <label for="img2">Picture 2</label>
-                    <input type="file" name="img2" id="img2" >
+                    <input type="file" name="img2" id="img2">
                     <br>
                     <br>
                     <label for="img3">Picture 3</label>
@@ -93,15 +91,5 @@
 
         </form>
     </main>
-
 </body>
-
-<script type="text/javascript">
-
-    $("#projectregistration").submit(function (event) {
-        event.preventDefault();
-        projectRegistration();
-    });
-</script>
-
 </html>
