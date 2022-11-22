@@ -33,19 +33,25 @@ body header {
   grid-column: 2/8;
   grid-row: 1/2;
   margin-top: 2rem;
+  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
   width: 72vw;
-  background-color: #e2dfe3;
+  background-color: #c2c1c3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
 }
 body header h1 {
-  text-align: center;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  font-style: italic;
 }
 body header #header-img-container {
   width: 100%;
-  height: 15rem;
+  height: 12rem;
+  align-self: flex-end;
   background-image: url(../images/header.jpg);
   background-size: cover;
   background-position: center;
@@ -53,6 +59,14 @@ body header #header-img-container {
 }
 body header #header-text-container {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+body header #header-text-container div {
+  width: 20%;
+  border: 3px dotted black;
+  border-radius: 20px;
   background-color: #e2dfe3;
 }
 body header .info-box h2 {
@@ -165,31 +179,37 @@ body main #cardspace .photocard .photocard-img-container img {
   border-radius: 5px;
 }
 body #presentation {
-  width: 100vw;
+  width: 80vw;
+  max-width: 1000px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  margin-top: 2rem;
 }
 body #presentation .segment {
-  width: 80%;
+  width: 100%;
   height: 30%;
   display: flex;
   flex-direction: row;
-  background-color: #e2dfe3;
   border: 1px solid rgb(0, 0, 0);
-  border-radius: 5px;
-  margin: 1%;
-  padding: 1%;
+  margin-bottom: 1%;
+  background-color: #e2dfe3;
 }
 body #presentation .segment#team-info-box .image-container {
   width: 100%;
-  height: 30%;
+  height: 100px;
 }
 body #presentation .segment#team-info-box .image-container img {
   width: 100%;
   height: 100px;
   object-fit: cover;
+}
+body #presentation .segment#vd-info-box {
+  padding: 0;
+  height: 150px;
+  display: flex;
+  gap: 3rem;
+  width: 40%;
 }
 body #presentation .segment#vd-info-box a {
   text-decoration: none;
@@ -209,111 +229,117 @@ body #presentation .segment#vd-info-box a.active {
   background-color: #77a0d6;
 }
 body #presentation .segment#vd-info-box .image-container {
-  width: 40%;
-  height: 100px;
+  margin: 0;
+  width: 150px;
+  height: 150px;
 }
 body #presentation .segment#vd-info-box .image-container img {
   width: 90%;
   height: 100%;
   object-fit: cover;
 }
-body #contactform {
+body #contact-form {
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin: auto;
 }
-body #contactform label {
-  margin-bottom: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  font-weight: 700;
-  font-size: large;
-  padding: 1.5rem;
+body #contact-form h2 {
+  margin-left: 5rem;
+  font-style: italic;
 }
-body #contactform textarea {
-  width: 100%;
-  padding: 1.5rem;
+body #contact-form div {
+  display: flex;
+  gap: 2rem;
 }
-body #contactform input {
-  width: 60%;
-  box-sizing: border-box;
-  border: 1px, ridge, #350f94;
-  margin-bottom: 0.5rem;
-  margin-left: 1.5rem;
-  margin-right: 0.5rem;
+body #contact-form label {
+  width: 20%;
+  display: inline-block;
+  text-align: end;
+  height: 2rem;
+  padding-top: 0.8rem;
 }
-body #contactform input[type=submit] {
+body #contact-form input {
+  width: 55%;
+  display: block;
+}
+body #contact-form input[type=submit] {
+  padding: 0.5rem;
   font-size: 1rem;
+  width: 58%;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-left: 27%;
+  margin-left: 25%;
   border: none;
+  background-color: #08090b;
+  color: #e2dfe3;
+  font-weight: 600;
+  font-size: large;
 }
-body #contactform textarea {
+body #contact-form textarea {
   width: 50%;
-  margin-bottom: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  resize: none;
+  padding: 1.2rem;
+  margin: 0;
 }
 body #projectregistration {
+  padding-top: 100px;
   box-sizing: border-box;
-  width: 100%;
+  width: 500px;
   grid-column: inherit;
   grid-row: inherit;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
   margin: auto;
+}
+body #projectregistration h2 {
+  margin-left: 8rem;
 }
 body #projectregistration div {
   display: flex;
   gap: 1rem;
 }
 body #projectregistration label {
-  box-sizing: border-box;
   width: 20%;
   display: inline-block;
   text-align: end;
+  height: 2rem;
+  padding-top: 0.8rem;
 }
 body #projectregistration input {
-  box-sizing: border-box;
-  width: 30%;
+  width: 60%;
   display: block;
-  border: 1px, ridge, #350f94;
 }
 body #projectregistration input[type=submit] {
+  padding: 0.5rem;
   font-size: 1rem;
+  width: 20%;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-left: 27%;
+  margin-left: 1rem;
   border: none;
 }
 body #projectregistration .filedrop {
-  width: 50%;
+  width: 80%;
   display: flex;
   gap: 1rem;
-  justify-items: space-around;
 }
 body #projectregistration .filedrop label {
   display: none;
 }
 body #projectregistration .filedrop label:first-child {
   display: inline-block;
-  border: #000000 1px solid;
-  border-radius: 5px;
-  background-color: #7927cc;
-  width: 100%;
-  gap: 1rem;
+  width: 40%;
   margin-right: inherit;
   text-align: end;
 }
 body #projectregistration .filedrop input {
   margin: 0;
-  background-color: #350f94;
-  width: 25%;
-}
-body #projectregistration .filedrop input[type=button] {
-  color: #350f94;
-  margin: 0%;
+  width: 20%;
+  padding-top: 0.6rem;
 }
 
 /*# sourceMappingURL=style.css.map */
