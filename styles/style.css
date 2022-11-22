@@ -91,7 +91,7 @@ body header p {
 body aside {
   grid-column: 1/2;
   grid-row: 1/4;
-  margin-top: 2rem;
+  margin-top: 8rem;
 }
 body aside nav {
   height: 90%;
@@ -135,6 +135,9 @@ body main #cardspace {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
 }
 body main #cardspace .card {
   width: 25rem;
@@ -322,6 +325,13 @@ body #projectregistration input[type=submit] {
   margin-left: 1rem;
   border: none;
 }
+body #projectregistration select {
+  width: 60%;
+  display: block;
+}
+body #projectregistration textarea {
+  width: 60%;
+}
 body #projectregistration .filedrop {
   width: 80%;
   display: flex;
@@ -340,6 +350,10 @@ body #projectregistration .filedrop input {
   margin: 0;
   width: 20%;
   padding-top: 0.6rem;
+}
+body #projectregistration .filedrop input#file-upload-button {
+  background-color: #350f94;
+  padding: 0%;
 }
 
 /*# sourceMappingURL=style.css.map */

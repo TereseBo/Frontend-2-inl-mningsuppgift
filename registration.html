@@ -30,57 +30,66 @@
 
     <main>
 
-       
+
 
         <form id="projectregistration" action="#">
             <h2>Please register your weave below</h1>
-            <div>
-                <label for="projectname">Project name</label>
-                <input type="text" name="projectname" id="projectname" placeholder="Name of project">
-            </div>
-            <div>
-                <label for="date">Off the loom</label>
-                <input type="date" name="date" id="date">
-            </div>
-            <div>
-                <label for="description">Short description</label>
-                <input type="text" name="description" id="description" placeholder="Describe your item">
-            </div>
-            <div>
-                <label for="category">Type of item</label>
-                <input type="category" name="category" id="category">
-            </div>
-            <div>
-                <label for="warp">Warp fibers</label>
-                <input type="text" name="warp" id="warp">
-            </div>
-            <div>
-                <label for="weft">Weft fibers</label>
-                <input type="text" name="weft" id="weft">
-            </div>
-            <div>
-                <label for="details">Details </label>
-                <input type="text" name="details" id="details" placeholder="fringes, ladders, etc.">
-            </div>
-            <div class="filedrop">
-                <label for="img1">Picture 1</label>
-                <input type="file" name="img1" id="img1">
-                <br>
-                <br>
-                
-                <label for="img2">Picture 2</label>
-                <input type="file" name="img2" id="img2">
-                <br>
-                <br>
-                <label for="img3">Picture 3</label>
-                <input type="file" name="img3" id="img3">
-                <br>
-                <br>
-                <label for="img4">Picture 4</label>
-                <input type="file" name="img4" id="img4">
-            </div>
+                <div>
+                    <label for="projectname">Project name</label>
+                    <input type="text" name="projectname" id="projectname" placeholder="Name of project">
+                </div>
+                <div>
+                    <label for="date">Off the loom</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div>
+                    <label for="description">Short description</label>
+                    <textarea name="description" id="description" cols="55" rows="10"
+                        placeholder="Describe your item"></textarea>
+                </div>
+                >
+                <div>
+                    <label for="warp">Warp fibers</label>
+                    <input type="text" name="warp" id="warp" placeholder="100% Merino wool">
+                </div>
+                <div>
+                    <label for="weft">Weft fibers</label>
+                    <input type="text" name="weft" id="weft" placeholder="70% Merino wool, 30% Flax">
+                </div>
+                <div>
+                    <label for="details">Details </label>
+                    <input type="text" name="details" id="details" placeholder="Fringes, ladders, etc.">
+                </div>
+                <div class="filedrop">
+                    <label for="img1">Pictures</label>
+                    <input type="file" name="img1" id="img1" title>
+                    <br>
+                    <br>
 
-            <input type="submit" value="Submit">
+                    <label for="img2">Picture 2</label>
+                    <input type="file" name="img2" id="img2" >
+                    <br>
+                    <br>
+                    <label for="img3">Picture 3</label>
+                    <input type="file" name="img3" id="img3">
+                    <br>
+                    <br>
+                    <label for="img4">Picture 4</label>
+                    <input type="file" name="img4" id="img4">
+                </div>
+
+                <div>
+                    <label for="category">Type of item</label>
+                    <select name="category" id="category">
+                        <option value="blanket">Blanket</option>
+                        <option value="baby wrap">Baby wrap</option>
+                        <option value="shawl">Shawl</option>
+                        <option value="Bath towel">Bath towel</option>
+                        <option value="Hand towel">Hand towel</option>
+                    </select>
+                </div>
+                <br>
+                <input type="submit" value="Submit">
 
         </form>
     </main>
