@@ -11,7 +11,7 @@ const contents = [//An array of objects representing the items to be displayed i
         "details": "Long braided fringe,  embroidered details",
         "filenames": [
             "IMG_6830.JPG",
-            "IMG_6835.JPG",
+            "IMG_6832.JPG",
             "IMG_6835.JPG",
             "IMG_6834.JPG"
         ]
@@ -41,7 +41,7 @@ const contents = [//An array of objects representing the items to be displayed i
         "details": "Flax inlays",
         "filenames": [
             "IMG_9817.JPG",
-            "IMG_9817.JPG",
+            "IMG_9818.JPG",
             "IMG_9819.JPG",
             "IMG_9816.JPG"
         ]
@@ -117,7 +117,7 @@ const contents = [//An array of objects representing the items to be displayed i
         "filenames": [
             "IMG_9822.JPG",
             "IMG_9821.JPG",
-            "IMG_9820.JPG",
+            "IMG_9823.JPG",
             "IMG_9820.JPG"
         ]
     },
@@ -243,6 +243,7 @@ function pageContentLimiter() {//Switches the number of cards displayed and read
             break;
     }
 }
+
 $(document).ready(function () {//This is the code that runs when the page is loaded
     console.log(lastCardNumber());
     createCardFromArrOgObj(contents)
