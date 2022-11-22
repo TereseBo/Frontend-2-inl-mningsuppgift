@@ -255,31 +255,30 @@ body #contactform textarea {
   resize: none;
 }
 body #projectregistration {
+  box-sizing: border-box;
   width: 100%;
   grid-column: inherit;
   grid-row: inherit;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  margin: auto;
 }
 body #projectregistration div {
   display: flex;
   gap: 1rem;
 }
 body #projectregistration label {
-  width: 10%;
+  box-sizing: border-box;
+  width: 20%;
   display: inline-block;
   text-align: end;
 }
 body #projectregistration input {
-  width: 40%;
-  margin-left: 40%;
-  display: block;
   box-sizing: border-box;
+  width: 30%;
+  display: block;
   border: 1px, ridge, #350f94;
-  margin-bottom: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 body #projectregistration input[type=submit] {
   font-size: 1rem;
@@ -289,11 +288,32 @@ body #projectregistration input[type=submit] {
   border: none;
 }
 body #projectregistration .filedrop {
+  width: 50%;
   display: flex;
-  background-color: #350f94;
+  gap: 1rem;
+  justify-items: space-around;
+}
+body #projectregistration .filedrop label {
+  display: none;
+}
+body #projectregistration .filedrop label:first-child {
+  display: inline-block;
+  border: #000000 1px solid;
+  border-radius: 5px;
+  background-color: #7927cc;
+  width: 100%;
+  gap: 1rem;
+  margin-right: inherit;
+  text-align: end;
 }
 body #projectregistration .filedrop input {
-  display: inline;
+  margin: 0;
+  background-color: #350f94;
+  width: 25%;
+}
+body #projectregistration .filedrop input[type=button] {
+  color: #350f94;
+  margin: 0%;
 }
 
 /*# sourceMappingURL=style.css.map */
