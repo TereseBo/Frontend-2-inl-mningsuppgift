@@ -69,25 +69,6 @@ body header #header-text-container div {
   border-radius: 20px;
   background-color: #e2dfe3;
 }
-body header .info-box h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #000;
-}
-body header .info-box p {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #000;
-}
-body header h2 {
-  padding: 0;
-  margin-bottom: 0;
-}
-body header p {
-  padding: 0;
-  margin-top: 0;
-  line-break: loose;
-}
 body aside {
   grid-column: 1/2;
   grid-row: 1/4;
@@ -181,7 +162,7 @@ body main #cardspace .photocard .photocard-img-container img {
   object-fit: cover;
   border-radius: 5px;
 }
-body #presentation {
+body main #presentation {
   width: 80vw;
   max-width: 1000px;
   margin: auto;
@@ -189,7 +170,7 @@ body #presentation {
   flex-direction: column;
   box-sizing: border-box;
 }
-body #presentation .segment {
+body main #presentation .segment {
   width: 100%;
   height: 30%;
   display: flex;
@@ -198,23 +179,23 @@ body #presentation .segment {
   margin-bottom: 1%;
   background-color: #e2dfe3;
 }
-body #presentation .segment#team-info-box .image-container {
+body main #presentation .segment#team-info-box .image-container {
   width: 100%;
   height: 100px;
 }
-body #presentation .segment#team-info-box .image-container img {
+body main #presentation .segment#team-info-box .image-container img {
   width: 100%;
   height: 100px;
   object-fit: cover;
 }
-body #presentation .segment#vd-info-box {
+body main #presentation .segment#vd-info-box {
   padding: 0;
   height: 150px;
   display: flex;
   gap: 3rem;
   width: 40%;
 }
-body #presentation .segment#vd-info-box a {
+body main #presentation .segment#vd-info-box a {
   text-decoration: none;
   color: black;
   font-size: 1rem;
@@ -225,23 +206,23 @@ body #presentation .segment#vd-info-box a {
   margin-left: 1rem;
   text-align: center;
 }
-body #presentation .segment#vd-info-box a:hover {
+body main #presentation .segment#vd-info-box a:hover {
   background-color: #f1f1f1;
 }
-body #presentation .segment#vd-info-box a.active {
+body main #presentation .segment#vd-info-box a.active {
   background-color: #77a0d6;
 }
-body #presentation .segment#vd-info-box .image-container {
+body main #presentation .segment#vd-info-box .image-container {
   margin: 0;
   width: 150px;
   height: 150px;
 }
-body #presentation .segment#vd-info-box .image-container img {
+body main #presentation .segment#vd-info-box .image-container img {
   width: 90%;
   height: 100%;
   object-fit: cover;
 }
-body #contact-form {
+body main #presentation #contact-form {
   padding-bottom: 40px;
   box-sizing: border-box;
   width: 50%;
@@ -250,26 +231,26 @@ body #contact-form {
   gap: 1rem;
   margin: auto;
 }
-body #contact-form h2 {
+body main #presentation #contact-form h2 {
   margin-left: 5rem;
   font-style: italic;
 }
-body #contact-form div {
+body main #presentation #contact-form div {
   display: flex;
   gap: 2rem;
 }
-body #contact-form label {
+body main #presentation #contact-form label {
   width: 20%;
   display: inline-block;
   text-align: end;
   height: 2rem;
   padding-top: 0.8rem;
 }
-body #contact-form input {
+body main #presentation #contact-form input {
   width: 55%;
   display: block;
 }
-body #contact-form input[type=submit] {
+body main #presentation #contact-form input[type=submit] {
   padding: 0.5rem;
   font-size: 1rem;
   width: 58%;
@@ -282,12 +263,12 @@ body #contact-form input[type=submit] {
   font-weight: 600;
   font-size: large;
 }
-body #contact-form textarea {
+body main #presentation #contact-form textarea {
   width: 50%;
   padding: 1.2rem;
   margin: 0;
 }
-body #projectregistration {
+body main #projectregistration {
   padding-top: 100px;
   box-sizing: border-box;
   width: 500px;
@@ -298,25 +279,25 @@ body #projectregistration {
   gap: 1rem;
   margin: auto;
 }
-body #projectregistration h2 {
+body main #projectregistration h2 {
   margin-left: 8rem;
 }
-body #projectregistration div {
+body main #projectregistration div {
   display: flex;
   gap: 1rem;
 }
-body #projectregistration label {
+body main #projectregistration label {
   width: 20%;
   display: inline-block;
   text-align: end;
   height: 2rem;
   padding-top: 0.8rem;
 }
-body #projectregistration input {
+body main #projectregistration input {
   width: 60%;
   display: block;
 }
-body #projectregistration input[type=submit] {
+body main #projectregistration input[type=submit] {
   padding: 0.5rem;
   font-size: 1rem;
   width: 20%;
@@ -325,33 +306,33 @@ body #projectregistration input[type=submit] {
   margin-left: 1rem;
   border: none;
 }
-body #projectregistration select {
+body main #projectregistration select {
   width: 60%;
   display: block;
 }
-body #projectregistration textarea {
+body main #projectregistration textarea {
   width: 60%;
 }
-body #projectregistration .filedrop {
+body main #projectregistration .filedrop {
   width: 80%;
   display: flex;
   gap: 1rem;
 }
-body #projectregistration .filedrop label {
+body main #projectregistration .filedrop label {
   display: none;
 }
-body #projectregistration .filedrop label:first-child {
+body main #projectregistration .filedrop label:first-child {
   display: inline-block;
   width: 40%;
   margin-right: inherit;
   text-align: end;
 }
-body #projectregistration .filedrop input {
+body main #projectregistration .filedrop input {
   margin: 0;
   width: 20%;
   padding-top: 0.6rem;
 }
-body #projectregistration .filedrop input#file-upload-button {
+body main #projectregistration .filedrop input#file-upload-button {
   background-color: #350f94;
   padding: 0%;
 }
