@@ -14,7 +14,7 @@ function detailsMainGenerator(item) {//Creates the main content of the details p
         $(`#cardspace`).append(`<div class='photocard' id='card${index}'></div>`);//Create a new photocard
 
         $(`#card${index}`).append(`<div class='photocard-img-container'><img id='pic${index}' src="../../images/${filename}" alt="Picture ${index} of the ${item["category"]} named ${item["projectname"]}" ></img></div>`);
-     
+
         index++;
     });
 }
@@ -35,10 +35,11 @@ function aggregateInfo(item) {//Adds info to the header from the item
         switch (key) {
             case "weft":
             case "warp":
-            case "details":
+            case "description":
                 $(`.basic-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
                 break;
-            case "description":
+
+            case "details":
                 $(`.more-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
                 break;
             case "category":
@@ -52,8 +53,8 @@ function aggregateInfo(item) {//Adds info to the header from the item
                 break;
         }
     }
-    $(`.basic-info-container`).append(`<button class='details'>Description</button>`);
-    $(`.details`).on("click", function (){$(`.basic-info-container`).css('padding-bottom',0);$(`.more-info-container`).toggle();});
+    $(`.basic-info-container`).append(`<button class='details'>Details</button>`);
+    $(`.details`).on("click", function () { $(`.basic-info-container`).css('padding-bottom', 0); $(`.more-info-container`).toggle(); });
 }
 
 let item = JSON.parse(localStorage.getItem("viewitem"));//Get the item from local storage

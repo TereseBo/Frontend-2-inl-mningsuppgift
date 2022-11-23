@@ -42,7 +42,7 @@ function getFileInputIds() {//Returns array of file input ids
     })
     return fileInputIds;
 }
-$(document).ready(function () {
+$(document).ready(function () {//Runs on document ready
     $("main").css("grid-row", "1/4");//Readjusts main to cover the header area
     getFileInputIds().forEach((item) => {//Replaces text on file upload button on change
         replaceFileUploadText(item);

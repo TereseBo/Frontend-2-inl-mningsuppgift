@@ -176,7 +176,6 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
                     break;
                 case "weft":
                 case "warp":
-                case "details":
                     $(`#card${n}-more-info-container`).append(`<p><span class='key'>${displayKey}:</span><span class='value'> ${item[key]}</<span></p>`);//Add details to the more-info-container
                     break;
                 case "description":
@@ -187,6 +186,7 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
                 case "date":
                     $(`#card${n}-basic-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
                     break;
+                case "details":
                 default:
                     break;
             }
@@ -194,11 +194,11 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
         }
         $(`#card${n}-basic-info-container`).append(`<button class='details' id='card${n}-details'>Detailed info</button>`);
         $(`#card${n}-details`).click(function () {
-            let name=$(this).attr('id').slice(0,-8);
+            let name = $(this).attr('id').slice(0, -8);
             console.log(name);
             $(`#${name}-more-info-container`).toggle();
         });
-        $(`#card${n}-img`).click(function () {goToDetailPage(item)});
+        $(`#card${n}-img`).click(function () { goToDetailPage(item) });
         n++;
     });
 
