@@ -285,7 +285,7 @@ body main #presentation #contact-form-container #thankyou-message {
 body main #projectregistration {
   padding-top: 100px;
   box-sizing: border-box;
-  width: 500px;
+  width: 600px;
   grid-column: inherit;
   grid-row: inherit;
   display: flex;
@@ -301,17 +301,20 @@ body main #projectregistration div {
   gap: 1rem;
 }
 body main #projectregistration label {
-  width: 20%;
+  box-sizing: border-box;
+  width: 15%;
   display: inline-block;
   text-align: end;
   height: 2rem;
   padding-top: 0.8rem;
 }
 body main #projectregistration input {
+  box-sizing: border-box;
   width: 60%;
   display: block;
 }
 body main #projectregistration input[type=submit] {
+  box-sizing: border-box;
   padding: 0.5rem;
   font-size: 1rem;
   width: 20%;
@@ -321,34 +324,46 @@ body main #projectregistration input[type=submit] {
   border: none;
 }
 body main #projectregistration select {
+  box-sizing: border-box;
   width: 60%;
   display: block;
 }
 body main #projectregistration textarea {
   width: 60%;
 }
-body main #projectregistration .filedrop {
-  width: 80%;
+body main #projectregistration .filedrop-section {
+  box-sizing: border-box;
+  width: 100%;
+}
+body main #projectregistration .filedrop-section .file-drop-container {
   display: flex;
-  gap: 1rem;
+  box-sizing: border-box;
+  width: 60%;
+  padding-left: 1px;
+  padding-right: 1px;
 }
-body main #projectregistration .filedrop label {
-  display: none;
-}
-body main #projectregistration .filedrop label:first-child {
-  display: inline-block;
-  width: 40%;
-  margin-right: inherit;
-  text-align: end;
-}
-body main #projectregistration .filedrop input {
-  margin: 0;
+body main #projectregistration .filedrop-section .file-drop-container label {
+  box-sizing: border-box;
   width: 20%;
-  padding-top: 0.6rem;
+  text-align: center;
+  height: 2rem;
+  padding: 0rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7e7ec;
+  cursor: pointer;
 }
-body main #projectregistration .filedrop input#file-upload-button {
-  background-color: #350f94;
-  padding: 0%;
+body main #projectregistration .filedrop-section .file-drop-container label:hover {
+  background: #a7aaa8;
+}
+body main #projectregistration .filedrop-section .file-drop-container label:active {
+  background: #a19fa0;
+}
+body main #projectregistration .filedrop-section .file-drop-container input {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

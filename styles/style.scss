@@ -338,7 +338,7 @@ body {
             padding-top: 100px;
             box-sizing: border-box;
             //width: 100%;
-            width: 500px;
+            width: 600px;
             grid-column: inherit;
             grid-row: inherit;
             display: flex;
@@ -356,7 +356,8 @@ body {
             }
 
             & label {
-                width: 20%;
+                box-sizing: border-box;
+                width: 15%;
                 display: inline-block;
                 text-align: end;
                 height: 2rem;
@@ -364,10 +365,12 @@ body {
             }
 
             & input {
+                box-sizing: border-box;
                 width: 60%;
                 display: block;
 
                 &[type="submit"] {
+                    box-sizing: border-box;
                     padding: 0.5rem;
                     font-size: 1rem;
                     width: 20%;
@@ -379,6 +382,7 @@ body {
             }
 
             & select {
+                box-sizing: border-box;
                 width: 60%;
                 display: block;
             }
@@ -389,35 +393,48 @@ body {
 
             }
 
-            & .filedrop {
-                width: 80%;
-                display: flex;
-                gap: 1rem;
+            & .filedrop-section {
+                box-sizing: border-box;
+                width: 100%;
 
-                & label {
-                    display: none;
+                & .file-drop-container {
+                    display: flex;
+                    box-sizing: border-box;
+                    width: 60%;
+                    padding-left: 1px;
+                    padding-right: 1px;
 
-                    &:first-child {
-                        display: inline-block;
-                        width: 40%;
-                        margin-right: inherit;
-                        text-align: end;
+                    & label {
+                        box-sizing: border-box;
+                        width: 20%;
+                        text-align: center;
+                        height: 2rem;
+                        padding: 0rem;
+                        border-radius: 5px;
+                        border: 1px solid black;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #e7e7ec;
+
+                        cursor: pointer;
+
+                        &:hover {
+                            background: #a7aaa8;
+                        }
+                        &:active {
+                            background: #a19fa0;
+                        }
+                    }
+
+                    & input {
+                        display: none;
                     }
                 }
 
-                & input {
-                    margin: 0;
-                    width: 20%;
-                    padding-top: 0.6rem;
 
-                    &#file-upload-button {
-                        //display: none;
-                        //opacity: 0;
-                        background-color: #350f94;
-                        //display: contents;
-                        padding: 0%;
-                    }
-                }
+
+
             }
         }
     }

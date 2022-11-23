@@ -26,8 +26,28 @@ function collectFileNames(){//Extracts file-name from string by splitting at \ a
     })
     return fileNames;
 }
+function replaceFileUploadText(buttonId) {//Replaces text on file upload button on change
+    
+    $(buttonId).change(function () {//On change of file input
+        let temp=[];
+        temp=$(this).val().split("\\")//get value of input and split
+        $(this).prev().text(temp[temp.length-1]).css("font-size", "0.8rem");//replace text with last item in array (aka file-name)
+        $(this).prev().css("background-color", "#abf7b1");//change color to black
+    })
+}
+function getFileInputIds() {//Returns array of file input ids
+    let fileInputIds = [];
+    $("input").filter("[type=file]").each(function () {
+        fileInputIds.push("#" + $(this).attr("id"));
+    })
+    return fileInputIds;
+}
 $(document).ready(function () {
     $("main").css("grid-row", "1/4");//Readjusts main to cover the header area
+    getFileInputIds().forEach((item) => {//Replaces text on file upload button on change
+        replaceFileUploadText(item);
+    })
+  
     $("#projectregistration").submit(function (event) {//Adds event listener to form
         event.preventDefault();
         projectRegistration();
