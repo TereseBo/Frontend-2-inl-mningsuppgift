@@ -36,9 +36,11 @@ function aggregateInfo(item) {//Adds info to the header from the item
             case "weft":
             case "warp":
             case "details":
-                $(`.more-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
+                $(`.basic-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
                 break;
             case "description":
+                $(`.more-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
+                break;
             case "category":
                 $(`.basic-info-container`).append(`<p><span class='key'>${displayKey}: </span><span class='value'>${item[key]}</<span></p>`);
                 break;
@@ -50,8 +52,8 @@ function aggregateInfo(item) {//Adds info to the header from the item
                 break;
         }
     }
-    $(`.basic-info-container`).append(`<button class='details'>Detailed info</button>`);
-    $(`.details`).on("click", function (){$(`.more-info-container`).toggle();});
+    $(`.basic-info-container`).append(`<button class='details'>Description</button>`);
+    $(`.details`).on("click", function (){$(`.basic-info-container`).css('padding-bottom',0);$(`.more-info-container`).toggle();});
 }
 
 let item = JSON.parse(localStorage.getItem("viewitem"));//Get the item from local storage

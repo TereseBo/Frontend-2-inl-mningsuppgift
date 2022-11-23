@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/scripts/script.js" type="module"></script>
+    <script src="/scripts/about.js"></script>
     <link rel="stylesheet" href="/styles/style.css">
-    <title>Document</title>
+    <title>About</title>
 </head>
 
 <body>
@@ -23,7 +23,10 @@
         </nav>
     </aside>
     <header>
+        <div class="basic-info-container">
         <h1>About us!</h1>
+        <p>Vi väver allt mellan himmel och jord.</p>
+    </div>
         <div id="header-text-container">
             <div class="basic-info-container">
                 <h2 class="info-header">Litet</h2>
@@ -73,10 +76,10 @@
                     </div>
                     <div>
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="5"></textarea>
                     </div>
                     <div>
-                        <input type="submit" value="Send">
+                        <input type="submit" id="contact-form-submit-button" value="Send">
                     </div>
                 </form>
             </div>
