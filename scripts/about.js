@@ -14,8 +14,3 @@ $(document).ready(function () {//Runs when the page is loaded
 
 
 });
-/*$("contact-form-submit-button").on("click", function () {
-    $("#contact-form").remove();
-   // $("#contact-form-container").append(`<p>Thank you for your message!</p>`);
-
-});*/
