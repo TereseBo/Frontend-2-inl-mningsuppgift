@@ -206,7 +206,7 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
 }
 function goToDetailPage(item) {//Save the clicked item to localstorage and go to the detail page
     localStorage.setItem("viewitem", JSON.stringify(item));
-    window.location.href = "/details.html";
+    window.location.href = "Frontend-2-inl-mningsuppgift/details.html";
 
 
 }
