@@ -13,7 +13,7 @@ function detailsMainGenerator(item) {//Creates the main content of the details p
 
         $(`#cardspace`).append(`<div class='photocard' id='card${index}'></div>`);//Create a new photocard
 
-        $(`#card${index}`).append(`<div class='photocard-img-container'><img id='pic${index}' src="../../images/${filename}" alt="Picture ${index} of the ${item["category"]} named ${item["projectname"]}" ></img></div>`);
+        $(`#card${index}`).append(`<div class='photocard-img-container'><img id='pic${index}' src="./images/${filename}" alt="Picture ${index} of the ${item["category"]} named ${item["projectname"]}" ></img></div>`);
 
         index++;
     });
