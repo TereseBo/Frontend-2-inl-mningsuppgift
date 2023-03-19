@@ -206,7 +206,7 @@ function createCardFromArrOgObj(arrObj) {//Creates cards for every object in an 
 }
 function goToDetailPage(item) {//Save the clicked item to localstorage and go to the detail page
     localStorage.setItem("viewitem", JSON.stringify(item));
-    window.location.href = "Frontend-2-inl-mningsuppgift/details.html";
+    window.location.href = "/details.html";
 
 
 }
@@ -229,17 +229,17 @@ function pageContentLimiter() {//Switches the number of cards displayed and read
     let page = window.location.pathname;
     switch (page) {
         case "/":
-        case "/index.html":
+        case "Frontend-2-inl-mningsuppgift/index.html":
             console.log("index" + page);
             limitCardNr(6);
             break;
-        case "/list.html":
+        case "Frontend-2-inl-mningsuppgift/list.html":
             console.log("list" + page);
             limitCardNr(10);
             readjustCardSpace();
             break;
-        case "/about.html":
-        case "/details.html":
+        case "Frontend-2-inl-mningsuppgift/about.html":
+        case "Frontend-2-inl-mningsuppgift/details.html":
         default:
             break;
     }
