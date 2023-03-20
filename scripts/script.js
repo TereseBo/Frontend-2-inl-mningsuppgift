@@ -230,17 +230,17 @@ function pageContentLimiter() {//Switches the number of cards displayed and read
     console.log(page);//test of path to get limiter to work on gh pages
     switch (page) {
         case "/":
-        case "Frontend-2-inl-mningsuppgift/index.html":
+        case "/Frontend-2-inl-mningsuppgift/index.html":
             console.log("index" + page);
             limitCardNr(6);
             break;
-        case "Frontend-2-inl-mningsuppgift/list.html":
+        case "/Frontend-2-inl-mningsuppgift/list.html":
             console.log("list" + page);
             limitCardNr(10);
             readjustCardSpace();
             break;
-        case "Frontend-2-inl-mningsuppgift/about.html":
-        case "Frontend-2-inl-mningsuppgift/details.html":
+        case "/Frontend-2-inl-mningsuppgift/about.html":
+        case "/Frontend-2-inl-mningsuppgift/details.html":
         default:
             break;
     }
