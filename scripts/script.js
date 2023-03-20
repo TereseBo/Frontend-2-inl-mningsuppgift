@@ -227,6 +227,7 @@ function readjustCardSpace() {//Readjusts the cardspace to cover the header area
 
 function pageContentLimiter() {//Switches the number of cards displayed and readjusts cardspace if necessary, depending on the window-location
     let page = window.location.pathname;
+    console.log(page);//test of path to get limiter to work on gh pages
     switch (page) {
         case "/":
         case "Frontend-2-inl-mningsuppgift/index.html":
