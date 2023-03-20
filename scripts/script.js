@@ -247,7 +247,6 @@ function pageContentLimiter() {//Switches the number of cards displayed and read
 }
 
 $(document).ready(function () {//This is the code that runs when the page is loaded
-    console.log(lastCardNumber());
     createCardFromArrOgObj(contents)
     pageContentLimiter();
 });

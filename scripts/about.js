@@ -1,7 +1,6 @@
 
 //"contact-form-submit-button"
 $(document).ready(function () {//Runs when the page is loaded
-    console.log("ready");
     $("#contact-form-submit-button").on("click", function () {
       event.preventDefault();
         console.log("clicked");
